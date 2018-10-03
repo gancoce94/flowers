@@ -1,16 +1,1 @@
-.DS_Store
 
-application/cache/*
-!application/cache/index.html
-
-application/logs/*
-!application/logs/index.html
-
-!application/*/.htaccess
-
-/vendor/
-
-# IDE Files
-#-------------------------
-/nbproject/
-.idea/*
