@@ -12,20 +12,13 @@
       </div>
 
       <span class="topbar-child1">
-        Free shipping for standard order over $100
+        Envío gratis, en compras a partir de $50
       </span>
 
       <div class="topbar-child2">
         <span class="topbar-email">
           fashe@example.com
         </span>
-
-        <div class="topbar-language rs1-select2">
-          <select class="selection-1" name="time">
-            <option>USD</option>
-            <option>EUR</option>
-          </select>
-        </div>
       </div>
     </div>
 
@@ -40,36 +33,34 @@
         <nav class="menu">
           <ul class="main_menu">
             <li>
-              <a href="index.html">Home</a>
+              <a href="<?php echo base_url(); ?>">Inicio</a>
+            </li>
+
+            <li>
+              <a href="#">Categorías</a>
               <ul class="sub_menu">
-                <li><a href="index.html">Homepage V1</a></li>
-                <li><a href="home-02.html">Homepage V2</a></li>
-                <li><a href="home-03.html">Homepage V3</a></li>
+                <li><a href="index.html">Flores Preservadas</a></li>
+                <li><a href="home-02.html">Arreglos</a></li>
+                <li><a href="home-03.html">Peluches y Obsequios</a></li>
+                <li><a href="home-03.html">Ramos</a></li>
+                <li><a href="home-03.html">Eventos</a></li>
               </ul>
             </li>
 
             <li>
-              <a href="product.html">Shop</a>
-            </li>
-
-            <li class="sale-noti">
-              <a href="product.html">Sale</a>
+              <a href="product.html">Productos</a>
             </li>
 
             <li>
-              <a href="cart.html">Features</a>
+              <a href="cart.html">Servicios</a>
             </li>
 
             <li>
-              <a href="blog.html">Blog</a>
+              <a href="about.html">Quiénes Somos</a>
             </li>
 
             <li>
-              <a href="about.html">About</a>
-            </li>
-
-            <li>
-              <a href="contact.html">Contact</a>
+              <a href="contact.html">Contacto</a>
             </li>
           </ul>
         </nav>
