@@ -10,7 +10,7 @@
         <p class="s-text7 w-size27">
           <h6 style="font-size:14px">Matriz: Urdesa Central y Ficus Telf.: 044201987 - 0991302840</h6><br>
           <h6 style="font-size:14px">Sucursal 1: Cdla. Alborada 5ta etapa Telf.:  042304050 - 0999607010</h6><br>
-          <h6 style="font-size:14px">Sucursal 2: Av. 25 de Julio diagonal al Mall del Sur Telf.: 042304050 - 0999607010</h6>
+          <h6 style="font-size:14px">Sucursal 2: Av. 25 de Julio diagonal al Mall del Sur Telf.: 042304050 - 0999607071</h6>
         </p>
 
         <div class="flex-m p-t-30">

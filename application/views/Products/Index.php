@@ -118,7 +118,6 @@
                 <option>$100.00 - $150.00</option>
                 <option>$150.00 - $200.00</option>
                 <option>$200.00+</option>
-
               </select>
             </div>
           </div>
