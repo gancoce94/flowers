@@ -8,7 +8,7 @@
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/icons/favicon.png"/>
 
 	<title>
-		<?php echo (isset($tittle))? $tittle.' | IFS': 'Ivette Flowers Store'; ?>
+		<?php echo (isset($tittle))? $tittle.' | IFS': 'Ivettejdfgdfg Flowers Store'; ?>
 	</title>
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
