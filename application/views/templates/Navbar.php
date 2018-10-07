@@ -49,6 +49,9 @@
 
             <li>
               <a href="<?php echo base_url(); ?>Products">Productos</a>
+              <ul class="sub_menu">
+                <li><a href="<?php echo base_url(); ?>Products/Product">Agregar Productos</a></li>
+              </ul>
             </li>
 
             <li>
@@ -306,6 +309,10 @@
 
         <li class="item-menu-mobile">
           <a href="<?php echo base_url(); ?>Products">Productos</a>
+          <ul class="sub-menu">
+            <li><a href="<?php echo base_url(); ?>Products/Product">Agregar Productos</a></li>
+          </ul>
+          <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
         </li>
 
         <li class="item-menu-mobile">

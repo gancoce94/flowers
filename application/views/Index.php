@@ -141,6 +141,7 @@
 </section>
 
 <!-- Banner -->
+<!-- Banner -->
 <section class="banner bgwhite p-t-40 p-b-40">
   <div class="container">
     <div class="row">
@@ -152,7 +153,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Flores preservadas
+              Flores
             </a>
           </div>
         </div>
@@ -164,7 +165,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Peluches y obsequios
+              Arreglos
             </a>
           </div>
         </div>
@@ -177,8 +178,8 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4"
-              Arreglos
+            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+              Peluches
             </a>
           </div>
         </div>
@@ -190,7 +191,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Decoración eventos
+              Ramos
             </a>
           </div>
         </div>
@@ -204,7 +205,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Ramos
+              Eventos
             </a>
           </div>
         </div>
