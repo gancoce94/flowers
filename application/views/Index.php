@@ -152,7 +152,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Dresses
+              Flores preservadas
             </a>
           </div>
         </div>
@@ -164,7 +164,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Sunglasses
+              Peluches y obsequios
             </a>
           </div>
         </div>
@@ -178,7 +178,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Watches
+              Arreglos
             </a>
           </div>
         </div>
@@ -190,7 +190,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Footerwear
+              Decoración eventos
             </a>
           </div>
         </div>
@@ -204,7 +204,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Bags
+              Ramos
             </a>
           </div>
         </div>
@@ -271,11 +271,11 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Herschel supply co 25l
+                Tulipan-yute a01
               </a>
 
               <span class="block2-price m-text6 p-r-5">
-                $75.00
+                $32.00
               </span>
             </div>
           </div>
@@ -304,11 +304,11 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Denim jacket blue
+                Ramo novia lila-rosa r01
               </a>
 
               <span class="block2-price m-text6 p-r-5">
-                $92.50
+                $60.50
               </span>
             </div>
           </div>
@@ -337,11 +337,11 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Coach slim easton black
+                Girasol-yute a05
               </a>
 
               <span class="block2-price m-text6 p-r-5">
-                $165.90
+                $30.00
               </span>
             </div>
           </div>
@@ -370,15 +370,15 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Frayed denim shorts
+                Rosa roja-musgo e04
               </a>
 
               <span class="block2-oldprice m-text7 p-r-5">
-                $29.50
+                $48.00
               </span>
 
               <span class="block2-newprice m-text8 p-r-5">
-                $15.90
+                $38.90
               </span>
             </div>
           </div>
