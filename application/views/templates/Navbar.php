@@ -48,7 +48,7 @@
             </li>
 
             <li>
-              <a href="product.html">Productos</a>
+              <a href="<?php echo base_url(); ?>Products">Productos</a>
             </li>
 
             <li>
@@ -259,13 +259,14 @@
     </div>
   </div>
 
+
   <!-- Menu Mobile -->
   <div class="wrap-side-menu" >
     <nav class="side-menu">
       <ul class="main-menu">
         <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
           <span class="topbar-child1">
-            Free shipping for standard order over $100
+            Envío gratis, en compras a partir de $50
           </span>
         </li>
 
@@ -274,13 +275,6 @@
             <span class="topbar-email">
               fashe@example.com
             </span>
-
-            <div class="topbar-language rs1-select2">
-              <select class="selection-1" name="time">
-                <option>USD</option>
-                <option>EUR</option>
-              </select>
-            </div>
           </div>
         </li>
 
@@ -295,38 +289,37 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="index.html">Home</a>
+            <a href="<?php echo base_url(); ?>">Inicio</a>
+        </li>
+
+        <li class="item-menu-mobile">
+          <a href="#">Categorías</a>
           <ul class="sub-menu">
-            <li><a href="index.html">Homepage V1</a></li>
-            <li><a href="home-02.html">Homepage V2</a></li>
-            <li><a href="home-03.html">Homepage V3</a></li>
+            <li><a href="index.html">Flores Preservadas</a></li>
+            <li><a href="home-02.html">Arreglos</a></li>
+            <li><a href="home-03.html">Peluches y Obsequios</a></li>
+            <li><a href="home-03.html">Ramos</a></li>
+            <li><a href="home-03.html">Eventos</a></li>
           </ul>
           <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
         </li>
 
         <li class="item-menu-mobile">
-          <a href="product.html">Shop</a>
+          <a href="<?php echo base_url(); ?>Products">Productos</a>
         </li>
 
         <li class="item-menu-mobile">
-          <a href="product.html">Sale</a>
+          <a href="cart.html">Servicios</a>
         </li>
 
         <li class="item-menu-mobile">
-          <a href="cart.html">Features</a>
+          <a href="about.html">Quiénes Somos</a>
         </li>
 
         <li class="item-menu-mobile">
-          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contacto</a>
         </li>
 
-        <li class="item-menu-mobile">
-          <a href="about.html">About</a>
-        </li>
-
-        <li class="item-menu-mobile">
-          <a href="contact.html">Contact</a>
-        </li>
       </ul>
     </nav>
   </div>
