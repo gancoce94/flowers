@@ -17,7 +17,8 @@
 
       <div class="topbar-child2">
         <span class="topbar-email">
-          fashe@example.com
+          <a href="<?php echo base_url() ?>Users/Login">Login </a>|
+          <a href="<?php echo base_url() ?>Users/Signup"> Signup</a>
         </span>
       </div>
     </div>
@@ -276,7 +277,8 @@
         <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
           <div class="topbar-child2-mobile">
             <span class="topbar-email">
-              fashe@example.com
+              <a href="<?php echo base_url() ?>Users/Login">Login </a>|
+              <a href="<?php echo base_url() ?>Users/Signup"> Signup</a>
             </span>
           </div>
         </li>
