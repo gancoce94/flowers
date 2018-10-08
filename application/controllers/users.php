@@ -3,7 +3,7 @@
 /**
  *
  */
-class Products extends CI_Controller{
+class Users extends CI_Controller{
 
   function __construct(){
     parent::__construct();
@@ -14,12 +14,8 @@ class Products extends CI_Controller{
   }
 
   public function Index(){
-    $data['tittle']='Catálogo de Productos';
-<<<<<<< HEAD
-    $url='Products/Index';
-=======
->>>>>>> origin/javier
-    $this->load->view("Products/Index", $data);
+    $data['tittle']='Usuarios';
+    $this->load->view("Users/Index", $data);
   }
 
   public function Detail(){
@@ -43,34 +39,6 @@ class Products extends CI_Controller{
     $this->form_validation->set_rules('lstSucursal', 'Sucursal', 'required');
 
     if ($this->form_validation->run() != FALSE) {
-      if($this->input->post('fileSubmit') && !empty($_FILES['files']['name'])){
-          $filesCount = count($_FILES['files']['name']);
-          for($i = 0; $i < $filesCount; $i++){
-              $_FILES['file']['name']     = $_FILES['files']['name'][$i];
-              $_FILES['file']['type']     = $_FILES['files']['type'][$i];
-              $_FILES['file']['tmp_name'] = $_FILES['files']['tmp_name'][$i];
-              $_FILES['file']['error']     = $_FILES['files']['error'][$i];
-              $_FILES['file']['size']     = $_FILES['files']['size'][$i];
-
-              // File upload configuration
-              $uploadPath = './uploads/files/';
-              $config['upload_path'] = $uploadPath;
-              $config['encrypt_name'] = TRUE;
-              $config['allowed_types'] = 'jpg|jpeg|png|gif';
-
-              // Load and initialize upload library
-              $this->load->library('upload', $config);
-              $this->upload->initialize($config);
-
-              // Upload file to server
-              if($this->upload->do_upload('file')){
-                  // Uploaded file data
-                  $fileData = $this->upload->data();
-                  $uploadData[$i]['image_name'] = $fileData['file_name'];
-                  $uploadData[$i]['uploaded'] = date("Y-m-d H:i:s");
-              }
-          }
-      }
       $data = array(
         'id_sucursal'=>$this->input->post('lstSucursal'),
         'id_categoria'=>$this->input->post('lstCategoria'),
@@ -80,10 +48,6 @@ class Products extends CI_Controller{
         'cantidad'=>$this->input->post('txtCantidad'),
         'precio'=>$this->input->post('txtPrecio'),
         'disponibilidad'=>true,
-<<<<<<< HEAD
-=======
-        'imagen'=>$uploadData[1]['image_name'],
->>>>>>> origin/javier
         'modified'=>date('Y-m-d'),
         'created'=>date('Y-m-d')
       );
@@ -92,17 +56,6 @@ class Products extends CI_Controller{
         $this->session->set_flashdata("message", "Producto registrado correctamente.");
       }else {
         $this->session->set_flashdata("error", "Hubo un error al registrar el producto.");
-      }
-
-      $product = $this->model_productos->search($data['codigo']);
-      $idPro = $product->id;
-      //Insert images in db
-      if(!empty($uploadData)){
-        //Add id product to array
-        foreach($uploadData as &$row) {
-          $row['id_producto'] = $idPro;
-        }
-        $insert = $this->model_images->insertar($uploadData);
       }
 
     }
