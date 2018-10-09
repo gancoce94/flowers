@@ -7,10 +7,8 @@ class Users extends CI_Controller{
 
   function __construct(){
     parent::__construct();
-    $this->load->model('model_productos');
-    $this->load->model('model_categorias');
-    $this->load->model('model_sucursal');
-    $this->load->model('model_images');
+    $this->load->model('model_usuarios');
+    $this->load->model('model_ingreso');
   }
 
   public function Index(){
@@ -18,52 +16,56 @@ class Users extends CI_Controller{
     $this->load->view("Users/Index", $data);
   }
 
-  public function Detail(){
-    $data['tittle']='Detalles del Producto';
-    $this->load->view("Products/Detail", $data);
+  public function Login(){
+    $data['tittle']='Login';
+    $this->load->view("Users/Login", $data);
   }
 
-  public function Product(){
-    $data['tittle']='Registrar Productos';
-    $data['categorias']=$this->model_categorias->getAll();
-    $data['sucursal']=$this->model_sucursal->getAll();
-    $this->load->view("Products/Product", $data);
+  public function Signup(){
+    $data['tittle']='Signup';
+    $this->load->view("Users/Signup", $data);
   }
 
-  public function AddProduct(){
-    $this->form_validation->set_rules('txtCodigo', 'Cod. de Producto', 'required|is_unique[productos.codigo]');
-    $this->form_validation->set_rules('txtNombre', 'Nombre', 'required');
-    $this->form_validation->set_rules('lstCategoria', 'Categoría', 'required');
-    $this->form_validation->set_rules('txtCantidad', 'Cantidad', 'required');
-    $this->form_validation->set_rules('txtPrecio', 'Precio', 'required');
-    $this->form_validation->set_rules('lstSucursal', 'Sucursal', 'required');
+  public function AddUser(){
+    $this->form_validation->set_rules('txtCi', 'Cédula', 'required|is_unique[usuarios.ci]');
+    $this->form_validation->set_rules('txtFechaNac', 'Fecha de Nacimiento', 'required');
+    $this->form_validation->set_rules('txtTelefono', 'Telefono', 'required|regex_match[/^[0-9]{10}$/]');
+    $this->form_validation->set_rules('txtCorreo', 'Email', 'required');
+    $this->form_validation->set_rules('txtClave', 'Clave', 'required');
 
     if ($this->form_validation->run() != FALSE) {
-      $data = array(
-        'id_sucursal'=>$this->input->post('lstSucursal'),
-        'id_categoria'=>$this->input->post('lstCategoria'),
-        'codigo'=>$this->input->post('txtCodigo'),
-        'producto'=>$this->input->post('txtNombre'),
-        'descripcion'=>$this->input->post('txtDescripcion'),
-        'cantidad'=>$this->input->post('txtCantidad'),
-        'precio'=>$this->input->post('txtPrecio'),
-        'disponibilidad'=>true,
+      $dataUsers = array(
+        'ci'=>$this->input->post('txtCi'),
+        'nombres'=>$this->input->post('txtNombres'),
+        'apellidos'=>$this->input->post('txtApellidos'),
+        'telefono'=>$this->input->post('txtTelefono'),
+        'direccion'=>$this->input->post('txtDireccion'),
+        'fecha_nacimiento'=>$this->input->post('txtFechaNac'),
         'modified'=>date('Y-m-d'),
         'created'=>date('Y-m-d')
       );
+      $dataLogIn = array(
+        'correo'=>$this->input->post('txtCorreo'),
+        'clave'=>hash('sha512', $this->input->post('txtClave')),
+        'tipo_usuario'=>'c'
+      );
 
-      if ($this->model_productos->insertar($data)) {
-        $this->session->set_flashdata("message", "Producto registrado correctamente.");
-      }else {
-        $this->session->set_flashdata("error", "Hubo un error al registrar el producto.");
+      $insert = $this->model_usuarios->insertar($dataUsers);
+      if ($insert) {
+        $user = $this->model_usuarios->search($dataUsers['ci']);
+        $dataLogIn['id_usuario'] = $user->id;
+        $insert = $this->model_ingreso->insertar($dataLogIn);
       }
 
+      if ($insert) {
+        $this->session->set_flashdata("message", "Usuario registrado correctamente.");
+      }else {
+        $this->session->set_flashdata("error", "Hubo un error al registrar al usuario.");
+      }
     }
 
-    $data['tittle']='Registrar Productos';
-    $data['categorias']=$this->model_categorias->getAll();
-    $data['sucursal']=$this->model_sucursal->getAll();
-    $this->load->view("Products/Product", $data);
+    $data['tittle']='Registro de Usuario';
+    $this->load->view("Users/Signup", $data);
   }
 
 }

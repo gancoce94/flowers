@@ -40,11 +40,11 @@
             <li>
               <a href="#">Categorías</a>
               <ul class="sub_menu">
-                <li><a href="index.html">Flores Preservadas</a></li>
-                <li><a href="home-02.html">Arreglos</a></li>
-                <li><a href="home-03.html">Peluches y Obsequios</a></li>
-                <li><a href="home-03.html">Ramos</a></li>
-                <li><a href="home-03.html">Eventos</a></li>
+                <li><a href="#">Flores Preservadas</a></li>
+                <li><a href="#">Arreglos</a></li>
+                <li><a href="#">Peluches y Obsequios</a></li>
+                <li><a href="#">Ramos</a></li>
+                <li><a href="#">Eventos</a></li>
               </ul>
             </li>
 
@@ -56,7 +56,7 @@
             </li>
 
             <li>
-              <a href="cart.html">Servicios</a>
+              <a href="#">Servicios</a>
             </li>
 
             <li>
@@ -64,7 +64,7 @@
             </li>
 
             <li>
-              <a href="contact.html">Contacto</a>
+              <a href="<?php echo base_url() ?>Welcome/Contact">Contacto</a>
             </li>
           </ul>
         </nav>
@@ -72,7 +72,7 @@
 
       <!-- Header Icon -->
       <div class="header-icons">
-        <a href="#" class="header-wrapicon1 dis-block">
+        <a href="<?php echo base_url() ?>Users/Login" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 
@@ -141,7 +141,7 @@
             <div class="header-cart-buttons">
               <div class="header-cart-wrapbtn">
                 <!-- Button -->
-                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                   View Cart
                 </a>
               </div>
@@ -170,7 +170,7 @@
     <div class="btn-show-menu">
       <!-- Header Icon mobile -->
       <div class="header-icons-mobile">
-        <a href="#" class="header-wrapicon1 dis-block">
+        <a href="<?php echo base_url() ?>Users/Login" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 
@@ -239,7 +239,7 @@
             <div class="header-cart-buttons">
               <div class="header-cart-wrapbtn">
                 <!-- Button -->
-                <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                   View Cart
                 </a>
               </div>
@@ -300,11 +300,11 @@
         <li class="item-menu-mobile">
           <a href="#">Categorías</a>
           <ul class="sub-menu">
-            <li><a href="index.html">Flores Preservadas</a></li>
-            <li><a href="home-02.html">Arreglos</a></li>
-            <li><a href="home-03.html">Peluches y Obsequios</a></li>
-            <li><a href="home-03.html">Ramos</a></li>
-            <li><a href="home-03.html">Eventos</a></li>
+            <li><a href="#">Flores Preservadas</a></li>
+            <li><a href="#">Arreglos</a></li>
+            <li><a href="#">Peluches y Obsequios</a></li>
+            <li><a href="#">Ramos</a></li>
+            <li><a href="#">Eventos</a></li>
           </ul>
           <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
         </li>
@@ -318,7 +318,7 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="cart.html">Servicios</a>
+          <a href="#">Servicios</a>
         </li>
 
         <li class="item-menu-mobile">
@@ -326,7 +326,7 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="contact.html">Contacto</a>
+          <a href="<?php echo base_url() ?>Welcome/Contact">Contacto</a>
         </li>
 
       </ul>

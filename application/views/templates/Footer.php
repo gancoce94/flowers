@@ -169,7 +169,7 @@
     </a>
 
     <div class="t-center s-text8 p-t-20">
-      Copyright © 2018 Todos los derechos reservados. | Diseñado con el <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://colorlib.com" target="_blank">Ivette Flowers Sto</a>
+      Copyright © 2018 Todos los derechos reservados. | Diseñado con el <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="<?php echo base_url() ?>" target="_blank">Ivette Flowers Sto</a>
     </div>
   </div>
 </footer>
@@ -192,7 +192,9 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/animsition/js/animsition.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/popper.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/moment/moment.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/select2/select2.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/slick/slick.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/slick-custom.js"></script>
@@ -218,11 +220,10 @@
 				swal(nameProduct, "is added to wishlist !", "success");
 			});
 		});
+    $('#txtFechaNac').datepicker();
 	</script>
 
 	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
-  <?php echo (isset($js))? $js: ''; ?>
-
 
 </body>
 </html>

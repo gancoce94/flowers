@@ -15,10 +15,6 @@ class Products extends CI_Controller{
 
   public function Index(){
     $data['tittle']='Catálogo de Productos';
-<<<<<<< HEAD
-    $url='Products/Index';
-=======
->>>>>>> origin/javier
     $this->load->view("Products/Index", $data);
   }
 
@@ -80,10 +76,7 @@ class Products extends CI_Controller{
         'cantidad'=>$this->input->post('txtCantidad'),
         'precio'=>$this->input->post('txtPrecio'),
         'disponibilidad'=>true,
-<<<<<<< HEAD
-=======
         'imagen'=>$uploadData[1]['image_name'],
->>>>>>> origin/javier
         'modified'=>date('Y-m-d'),
         'created'=>date('Y-m-d')
       );
