@@ -1,6 +1,6 @@
 <?php $this->load->view("templates/Header") ?>
 <!-- Title Page -->
-<?php echo form_open_multipart(base_url() . "Users/Login/"); ?>
+<?php echo form_open_multipart(base_url() . "Users/Authenticate/"); ?>
 <!-- content page -->
 <section class="bgwhite p-t-66 p-b-60">
   <div class="container">
@@ -30,6 +30,9 @@
           <div class="w-size25">
             <input value="Ingresar" class="flex-c-m size2 bg1 hov1 m-text3 trans-0-4" type="submit"/>
           </div>
+        </div>
+        <div class="of-hidden size15" style="text-align: center; ">
+          <p>No eres usuario?</p><a href="<?php echo base_url() ?>Users/Signup">Regístrate</a>
         </div>
       </div>
       <div class="col-sm-12 col-md-4"></div>

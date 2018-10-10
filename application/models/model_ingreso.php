@@ -11,6 +11,17 @@ class Model_Ingreso extends CI_Model{
     return $insert?true:false;
   }
 
+  function login_user($data){
+    $this->db->like('correo',$data['correo']);
+    $this->db->like('clave',$data['clave']);
+    $query = $this->db->get('ingreso');
+    if ($query->num_rows() == 1){
+      return $query->row();
+    }else {
+      return 0;
+    }
+  }
+
 }
 
 ?>
