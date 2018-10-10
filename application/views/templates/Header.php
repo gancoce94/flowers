@@ -27,6 +27,9 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/vendor/lightbox2/css/lightbox.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/util.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/main.css">
+
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+	
 </head>
 <body class="animsition">
 <?php $this->load->view("templates/Navbar") ?>

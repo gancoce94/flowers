@@ -20,6 +20,8 @@ Versión 5.6 de PHP o superior recomendado.
 Instalación
 ************
 
+Crea una bdd con nombre flowers, en el servidor de bdd y luego importa la bdd
+que se encuentra en la carpeta db.
 Copiar el directorio del proyecto en la carpeta del servidor.
 
 *********

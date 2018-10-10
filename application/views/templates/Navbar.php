@@ -17,8 +17,13 @@
 
       <div class="topbar-child2">
         <span class="topbar-email">
+          <?php if ($this->session->userdata('ci') !== null){ ?>
+            <a href="<?php echo base_url() ?>Users/Profile"><?php echo $this->session->userdata('correo') ?> </a>|
+            <a href="<?php echo base_url() ?>Users/Logout"> Salir</a>
+          <?php }else{ ?>
           <a href="<?php echo base_url() ?>Users/Login">Login </a>|
           <a href="<?php echo base_url() ?>Users/Signup"> Signup</a>
+        <?php } ?>
         </span>
       </div>
     </div>
@@ -60,19 +65,25 @@
             </li>
 
             <li>
-              <a href="about.html">Quiénes Somos</a>
+              <a href="#">Quiénes Somos</a>
             </li>
 
             <li>
               <a href="<?php echo base_url() ?>Welcome/Contact">Contacto</a>
             </li>
+
+            <?php if (($this->session->userdata('ci')!==null) && ($this->session->userdata('tipo_usuario') == 'a')) { ?>
+              <li>
+                <a href="<?php echo base_url() ?>Users/Role">Admin</a>
+              </li>
+            <?php } ?>
           </ul>
         </nav>
       </div>
 
       <!-- Header Icon -->
       <div class="header-icons">
-        <a href="<?php echo base_url() ?>Users/Login" class="header-wrapicon1 dis-block">
+        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):('Users/Login'); ?>" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 
@@ -170,7 +181,7 @@
     <div class="btn-show-menu">
       <!-- Header Icon mobile -->
       <div class="header-icons-mobile">
-        <a href="<?php echo base_url() ?>Users/Login" class="header-wrapicon1 dis-block">
+        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):('Users/Login'); ?>" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 
@@ -277,8 +288,13 @@
         <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
           <div class="topbar-child2-mobile">
             <span class="topbar-email">
+              <?php if ($this->session->userdata('ci') !== null){ ?>
+                <a href="<?php echo base_url() ?>Users/Profile"><?php echo $this->session->userdata('correo') ?> </a>|
+                <a href="<?php echo base_url() ?>Users/Logout"> Salir</a>
+              <?php }else{ ?>
               <a href="<?php echo base_url() ?>Users/Login">Login </a>|
               <a href="<?php echo base_url() ?>Users/Signup"> Signup</a>
+            <?php } ?>
             </span>
           </div>
         </li>
@@ -322,13 +338,18 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="about.html">Quiénes Somos</a>
+          <a href="#">Quiénes Somos</a>
         </li>
 
         <li class="item-menu-mobile">
           <a href="<?php echo base_url() ?>Welcome/Contact">Contacto</a>
         </li>
 
+        <?php if (($this->session->userdata('ci')!==null) && ($this->session->userdata('tipo_usuario') == 'a')) { ?>
+          <li class="item-menu-mobile">
+            <a href="<?php echo base_url() ?>Users/Role">Admin</a>
+          </li>
+        <?php } ?>
       </ul>
     </nav>
   </div>
