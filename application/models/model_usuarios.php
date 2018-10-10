@@ -17,6 +17,12 @@ class Model_Usuarios extends CI_Model{
     return $query->row();
   }
 
+  function getById($keyword){
+    $this->db->where('id',$keyword);
+    $query = $this->db->get('usuarios');
+    return $query->row();
+  }
+
 }
 
 ?>

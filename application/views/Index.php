@@ -191,7 +191,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Ramos
+              Eventos
             </a>
           </div>
         </div>
@@ -205,7 +205,7 @@
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
             <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-              Eventos
+              Ramos
             </a>
           </div>
         </div>
@@ -272,7 +272,7 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Tulipan-yute a01
+                Tulipan-yute 009
               </a>
 
               <span class="block2-price m-text6 p-r-5">
@@ -305,7 +305,7 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Ramo novia lila-rosa r01
+                Ramo novia lila-rosa 028
               </a>
 
               <span class="block2-price m-text6 p-r-5">
@@ -338,7 +338,7 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Girasol-yute a05
+                Girasol-yute 013
               </a>
 
               <span class="block2-price m-text6 p-r-5">
@@ -371,7 +371,7 @@
 
             <div class="block2-txt p-t-20">
               <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-                Rosa roja-musgo e04
+                Rosa roja-musgo 004
               </a>
 
               <span class="block2-oldprice m-text7 p-r-5">
