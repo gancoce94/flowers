@@ -31,7 +31,7 @@
     <div class="wrap_header">
       <!-- Logo -->
       <a href="index.html" class="logo">
-        <img src="<?php echo base_url(); ?>/assets/images/icons/logo.jpeg" alt="IMG-LOGO">
+        <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
       </a>
 
       <!-- Menu -->
@@ -174,7 +174,7 @@
   <div class="wrap_header_mobile">
     <!-- Logo moblie -->
     <a href="index.html" class="logo-mobile">
-      <img src="<?php echo base_url(); ?>/assets/images/icons/logo.jpeg" alt="IMG-LOGO">
+      <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
     </a>
 
     <!-- Button show menu -->
