@@ -11,6 +11,13 @@ class Model_Ingreso extends CI_Model{
     return $insert?true:false;
   }
 
+  function updateTipoUser($keyword){
+    $this->db->set('tipo_usuario', 'v');
+    $this->db->where('id_usuario', $keyword);
+    $update = $this->db->update('ingreso');
+    return $update?true:false;
+  }
+
   function login_user($data){
     $this->db->like('correo',$data['correo']);
     $this->db->like('clave',$data['clave']);

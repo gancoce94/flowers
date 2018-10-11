@@ -11,6 +11,12 @@ class Model_Images extends CI_Model{
     return $insert?true:false;
   }
 
+  function getById($keyword){
+    $this->db->where('id_producto',$keyword);
+    $query = $this->db->get('images');
+    return $query->result();
+  }
+
 }
 
 ?>

@@ -17,6 +17,40 @@ class Model_Productos extends CI_Model{
     return $query->row();
   }
 
+  function getById($keyword){
+    $this->db->where('id',$keyword);
+    $query = $this->db->get('productos');
+    return $query->row();
+  }
+
+  function getRandom(){
+    $this->db->order_by('RANDOM()');
+    $this->db->limit(8);
+    $query = $this->db->get('productos');
+    return $query->result();
+  }
+
+  public function record_count() {
+    return $this->db->count_all("productos");
+  }
+
+  public function fetch_products($limit, $start) {
+    $sql="select p.*
+          from productos p
+          order by p.id desc
+          OFFSET ".$start." ROWS FETCH NEXT ".$limit." ROWS ONLY";
+    $query = $this->db->query($sql);
+
+    if ($query->num_rows() > 0) {
+      foreach ($query->result() as $row) {
+        $data[] = $row;
+      }
+      return $data;
+    }
+    return false;
+  }
+
+
 }
 
 ?>

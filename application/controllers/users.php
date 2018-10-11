@@ -141,6 +141,7 @@ class Users extends CI_Controller{
           );
 
           $insert = $this->model_vendedores->insertar($data);
+          $insert = $this->model_ingreso->updateTipoUser($user->id);
 
           if ($insert) {
             $this->session->set_flashdata("message", "El usuario ha sido asignado correctamente.");

@@ -32,13 +32,16 @@ $(function () {
             enableMouseTracking: false
         }
     },
-    series: [{
+    series: [
+      {
         name: 'Tokyo',
         data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-    }, {
-        name: 'London',
-        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
-    }]
+      },
+      {
+          name: 'London',
+          data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+      }
+    ]
   });
 
   Highcharts.chart('container3', {
@@ -170,15 +173,153 @@ Highcharts.chart('container4', {
         data: [1216]
     }]
 });
+
+Highcharts.chart('container6', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Ventas Por Categorias'
+    },
+    subtitle: {
+        text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+    },
+    xAxis: {
+        type: 'category',
+        labels: {
+            rotation: -45,
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Population (millions)'
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+    },
+    series: [{
+        name: 'Population',
+        data: [
+            ['Shanghai', 24.2],
+            ['Beijing', 20.8],
+            ['Karachi', 14.9],
+            ['Shenzhen', 13.7],
+            ['Guangzhou', 13.1],
+            ['Istanbul', 12.7],
+            ['Mumbai', 12.4],
+            ['Moscow', 12.2],
+            ['São Paulo', 12.0],
+            ['Delhi', 11.7],
+            ['Kinshasa', 11.5],
+            ['Tianjin', 11.2],
+            ['Lahore', 11.1],
+            ['Jakarta', 10.6],
+            ['Dongguan', 10.6],
+            ['Lagos', 10.6],
+            ['Bengaluru', 10.3],
+            ['Seoul', 9.8],
+            ['Foshan', 9.3],
+            ['Tokyo', 9.3]
+        ],
+        dataLabels: {
+            enabled: true,
+            rotation: -90,
+            color: '#FFFFFF',
+            align: 'right',
+            format: '{point.y:.1f}', // one decimal
+            y: 10, // 10 pixels down from the top
+            style: {
+                fontSize: '13px',
+                fontFamily: 'Verdana, sans-serif'
+            }
+        }
+    }]
+});
+
+Highcharts.chart('container5', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Porcentaje de Ventas por Cat.'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 61.41,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Internet Explorer',
+            y: 11.84
+        }, {
+            name: 'Firefox',
+            y: 10.85
+        }, {
+            name: 'Edge',
+            y: 4.67
+        }, {
+            name: 'Safari',
+            y: 4.18
+        }, {
+            name: 'Sogou Explorer',
+            y: 1.64
+        }, {
+            name: 'Opera',
+            y: 1.6
+        }, {
+            name: 'QQ',
+            y: 1.2
+        }, {
+            name: 'Other',
+            y: 2.61
+        }]
+    }]
+});
 });
 </script>
-<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-02.jpg);">
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-05.jpg);">
   <h2 class="l-text2 t-center">
     GRAFICOS DEL ADMINISTRADOR
   </h2>
 </section>
 <div class="container">
   <div class="row" style="padding: 10px;">
+    <div class="col-md-12">
+      <h4 class="m-text26 p-b-36" style="text-align: center;">
+        VENTAS POR VENDEDOR
+      </h4>
+    </div>
     <div class="col-md-3">
       <h4 class="m-text26 p-b-36" style="text-align: center;">
         Sucursales a mostrar
@@ -198,19 +339,37 @@ Highcharts.chart('container4', {
   </div>
   <hr>
   <div class="row" style="padding: 10px;">
-    <div class="col-md-3">
-
+    <div class="col-md-12">
+      <h4 class="m-text26 p-b-36" style="text-align: center;">
+        VENTAS POR SUCURSAL
+      </h4>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-12">
       <div id="container3" style="width: 100%; height: 100%; margin: 0 auto"></div>
     </div>
   </div>
   <hr>
   <div class="row" style="padding: 10px;">
-    <div class="col-md-3">
-
+    <div class="col-md-12">
+      <h4 class="m-text26 p-b-36" style="text-align: center;">
+        VENTAS POR CATEGORIA
+      </h4>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-5">
+      <div id="container5" style="width: 100%; height: 100%; margin: 0 auto"></div>
+    </div>
+    <div class="col-md-7">
+      <div id="container6" style="width: 100%; height: 100%; margin: 0 auto"></div>
+    </div>
+  </div>
+  <hr>
+  <div class="row" style="padding: 10px;">
+    <div class="col-md-12">
+      <h4 class="m-text26 p-b-36" style="text-align: center;">
+        TOP PRODUCTOS MAS VEDNDIDOS
+      </h4>
+    </div>
+    <div class="col-md-12">
       <div id="container4" style="width: 100%; height: 100%; margin: 0 auto"></div>
     </div>
   </div>

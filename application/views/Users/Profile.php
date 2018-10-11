@@ -4,14 +4,27 @@
     <div class="row">
       <div class="col-md-12">
         <h4 class="m-text26 p-b-36" style="text-align: center;">
-          USUARIO
+          MIS DATOS
         </h4>
       </div>
-      <?php if (($this->session->userdata('ci') !== null) && ($this->session->userdata('tipo_usuario') !== 'c')) { ?>
+      <?php
+      if (($this->session->userdata('ci') !== null) && ($this->session->userdata('tipo_usuario') != 'c')) {
+        if ($this->session->userdata('tipo_usuario') == 'a') {
+      ?>
         <div class="col-md-12" style="text-align: center;">
-          <a href="<?php echo base_url() ?>Charts/Admin">Ver Reportes</a>
+          <div class="block2-btn-addcart w-size1 trans-0-4 p-b-20">
+            <a class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" href="<?php echo base_url() ?>Charts/Admin">Ver Reportes</a>
+          </div>
         </div>
-      <?php } ?>
+      <?php } else { ?>
+        <div class="col-md-12" style="text-align: center;">
+          <div class="block2-btn-addcart w-size1 trans-0-4 p-b-20">
+            <a class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" href="<?php echo base_url() ?>Charts/Vendor">Ver Reportes</a>
+          </div>
+        </div>
+      <?php }
+        }
+      ?>
     </div>
   </div>
 </section>
