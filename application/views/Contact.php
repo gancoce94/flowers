@@ -1,7 +1,7 @@
 <?php $this->load->view("templates/Header") ?>
 
 	<!-- Title Page -->
-	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-06.jpg);">
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-04.jpg);">
 		<h2 class="l-text2 t-center">
 			Contacto
 		</h2>

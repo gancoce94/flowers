@@ -15,11 +15,29 @@ class Products extends CI_Controller{
 
   public function Index(){
     $data['tittle']='Catálogo de Productos';
+
+    $url = 'Products/Index';
+    $rows=$this->model_productos->record_count();
+    $config=getConfig($url, $rows);
+    $this->pagination->initialize($config);
+    $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+    $data["query"] = $this->model_productos->fetch_products($config["per_page"], $page);
+    $data["links"] = $this->pagination->create_links();
+    $data["rows"] = $rows;
+
     $this->load->view("Products/Index", $data);
   }
 
   public function Detail(){
     $data['tittle']='Detalles del Producto';
+    $id = decryptId($this->uri->segment(3));
+    $row = $this->model_productos->getById($id);
+    $images = $this->model_images->getById($id);
+    $data['producto'] = $row;
+    $data['images'] = $images;
+    $r_products = $this->model_productos->getRandom();
+    $data["rproducts"] = $r_products;
+
     $this->load->view("Products/Detail", $data);
   }
 
@@ -76,7 +94,7 @@ class Products extends CI_Controller{
         'cantidad'=>$this->input->post('txtCantidad'),
         'precio'=>$this->input->post('txtPrecio'),
         'disponibilidad'=>true,
-        'imagen'=>$uploadData[1]['image_name'],
+        'imagen'=>$uploadData[0]['image_name'],
         'modified'=>date('Y-m-d'),
         'created'=>date('Y-m-d')
       );

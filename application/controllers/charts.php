@@ -14,4 +14,10 @@ class Charts extends CI_Controller {
     $data['sucursal']=$this->model_sucursal->getAll();
 		$this->load->view('Charts/Admin', $data);
 	}
+
+	public function Vendor()	{
+		$data['tittle']='Graficos del Vendedor';
+		$data['sucursal']=$this->model_sucursal->getAll();
+		$this->load->view('Charts/Vendor', $data);
+	}
 }

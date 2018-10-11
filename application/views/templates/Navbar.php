@@ -31,7 +31,7 @@
     <div class="wrap_header">
       <!-- Logo -->
       <a href="index.html" class="logo">
-        <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
+        <img src="<?php echo base_url(); ?>/assets/images/icons/logo.jpeg" alt="IMG-LOGO">
       </a>
 
       <!-- Menu -->
@@ -83,7 +83,7 @@
 
       <!-- Header Icon -->
       <div class="header-icons">
-        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):('Users/Login'); ?>" class="header-wrapicon1 dis-block">
+        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):base_url('Users/Login'); ?>" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 
@@ -174,14 +174,14 @@
   <div class="wrap_header_mobile">
     <!-- Logo moblie -->
     <a href="index.html" class="logo-mobile">
-      <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
+      <img src="<?php echo base_url(); ?>/assets/images/icons/logo.jpeg" alt="IMG-LOGO">
     </a>
 
     <!-- Button show menu -->
     <div class="btn-show-menu">
       <!-- Header Icon mobile -->
       <div class="header-icons-mobile">
-        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):('Users/Login'); ?>" class="header-wrapicon1 dis-block">
+        <a href="<?php echo ($this->session->userdata('ci')!==null)?base_url('Users/Profile'):base_url('Users/Login'); ?>" class="header-wrapicon1 dis-block">
           <img src="<?php echo base_url(); ?>/assets/images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
         </a>
 

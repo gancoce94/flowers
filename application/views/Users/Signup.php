@@ -1,6 +1,6 @@
 <?php $this->load->view("templates/Header") ?>
 <!-- Title Page -->
-<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-02.jpg);">
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-03.jpg);">
   <h2 class="l-text2 t-center">
     Registro de Usuario
   </h2>
