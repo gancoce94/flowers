@@ -343,6 +343,10 @@ class CI_Loader {
 				break;
 			}
 
+			if ( ! class_exists($model, FALSE))
+			{
+				throw new RuntimeException('Unable to locate the model you have specified: '.$model);
+			}
 		}
 		elseif ( ! is_subclass_of($model, 'CI_Model'))
 		{
