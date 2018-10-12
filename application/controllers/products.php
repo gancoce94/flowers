@@ -7,10 +7,10 @@ class Products extends CI_Controller{
 
   function __construct(){
     parent::__construct();
-    $this->load->model('productos_model');
-    $this->load->model('categorias_model');
-    $this->load->model('sucursal_model');
-    $this->load->model('images_model');
+    $this->load->model('model_productos');
+    $this->load->model('model_categorias');
+    $this->load->model('model_sucursal');
+    $this->load->model('model_images');
   }
 
   public function Index(){

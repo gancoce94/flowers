@@ -4,7 +4,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  *
  */
-class Vendedores_model extends CI_Model{
+class Model_Vendedores extends CI_Model{
 
   public function __construct(){
     parent::__construct();

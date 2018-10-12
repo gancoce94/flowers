@@ -4,7 +4,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  *
  */
- class Ingreso_model extends CI_Model{
+ class Model_Ingreso extends CI_Model{
 
    public function __construct(){
      parent::__construct();

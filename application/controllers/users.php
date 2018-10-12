@@ -7,10 +7,10 @@ class Users extends CI_Controller{
 
   function __construct(){
     parent::__construct();
-    $this->load->model('usuarios_model');
-    $this->load->model('ingreso_model');
-    $this->load->model('sucursal_model');
-    $this->load->model('vendedores_model');
+    $this->load->model('model_usuarios');
+    $this->load->model('model_ingreso');
+    $this->load->model('model_sucursal');
+    $this->load->model('model_vendedores');
   }
 
   public function Index(){
