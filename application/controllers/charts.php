@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Charts extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('model_usuarios');
-		$this->load->model('model_sucursal');
-		$this->load->model('model_vendedores');
+		$this->load->model('usuarios_model');
+		$this->load->model('sucursal_model');
+		$this->load->model('vendedores_model');
 	}
 
 	public function Admin()	{
