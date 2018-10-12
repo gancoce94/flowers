@@ -19,4 +19,9 @@ class Welcome extends CI_Controller {
 		$this->load->view('Contact');
 	}
 
+	public function About()
+	{
+		$this->load->view('About');
+	}
+
 }
