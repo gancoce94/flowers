@@ -6,6 +6,10 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class Model_Productos extends CI_Model{
 
+  public function __construct(){
+    parent::__construct();
+  }
+
   function insertar($data){
     $insert = $this->db->insert('productos', $data);
     return $insert?true:false;

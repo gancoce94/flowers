@@ -4,9 +4,13 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  *
  */
-class Model_Ingreso extends CI_Model{
+ class Model_Ingreso extends CI_Model{
 
-  function insertar($data){
+   public function __construct(){
+     parent::__construct();
+   }
+
+   function insertar($data){
     $insert = $this->db->insert('ingreso', $data);
     return $insert?true:false;
   }

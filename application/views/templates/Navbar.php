@@ -65,7 +65,7 @@
             </li>
 
             <li>
-              <a href="#">Quiénes Somos</a>
+              <a href="<?php echo base_url(); ?>Welcome/About">Quiénes Somos</a>
             </li>
 
             <li>
@@ -338,7 +338,7 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="#">Quiénes Somos</a>
+          <a href="<?php echo base_url(); ?>Welcome/About">Quiénes Somos</a>
         </li>
 
         <li class="item-menu-mobile">
