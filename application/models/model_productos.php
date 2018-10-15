@@ -34,6 +34,17 @@ class Model_Productos extends CI_Model{
     return $query->result();
   }
 
+  function getTopProducts(){
+    $this->db->select('p.producto, SUM(d.total) as total');
+    $this->db->from('detalles d');
+    $this->db->join('productos p', 'd.id_producto = p.id');
+    $this->db->group_by('p.producto');
+    $this->db->order_by("total", "desc");
+    $this->db->limit(10);
+    $query = $this->db->get();
+    return $query->result();
+  }
+
   public function record_count() {
     return $this->db->count_all("productos");
   }

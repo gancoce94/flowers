@@ -15,6 +15,17 @@ class Model_Sucursal extends CI_Model{
     return $query->result();
   }
 
+  function getSumBySucursal($id, $month){
+    $this->db->select_sum('f.total');
+    $this->db->from('facturas f');
+    $this->db->join('vendedores v', 'f.id_vendedor = v.id_usuario');
+    $this->db->join('sucursal s', 'v.id_sucursal = s.id');
+    $this->db->where('EXTRACT(month from f.fecha) =', $month);
+    $this->db->where('s.id', $id);
+    $query = $this->db->get();
+    return $query->row();
+  }
+
 }
 
 ?>

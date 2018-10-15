@@ -4,11 +4,10 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  *
  */
- class Model_Images extends CI_Model{
-
-   public function __construct(){
-     parent::__construct();
-   }
+class Model_Images extends CI_Model{
+  public function __construct(){
+    parent::__construct();
+  }
 
   function insertar($data = array()){
     $insert = $this->db->insert_batch('images', $data);

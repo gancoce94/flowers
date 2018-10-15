@@ -28,8 +28,20 @@ class Model_Vendedores extends CI_Model{
     return $query->result();
   }
 
-  function getVentasByUser($value=''){
-    // code...
+  function getAll(){
+    $query = $this->db->get("vendedores");
+    return $query->result();
+  }
+
+  function getSumByVendor($id, $month){
+    $this->db->select_sum('f.total');
+    $this->db->from('facturas f');
+    $this->db->join('vendedores v', 'f.id_vendedor = v.id_usuario');
+    $this->db->join('sucursal s', 's.id = v.id_sucursal');
+    $this->db->where('f.id', $id);
+    $this->db->where('extract(moth from f.fecha) =', $month);
+    $query = $this->db->get();
+    return $query->result();
   }
 
 }
