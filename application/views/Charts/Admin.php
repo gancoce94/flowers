@@ -35,80 +35,7 @@ function vendors() {
   });
 }
 
-function setData(data){
-  var chart = $('#container2').highcharts();
-  for ( var i = 0; i < data.all_data.length; i++) {
-    var obj = data.all_data[i].data;
-    var dat = '';
-    for(var y =1; y<=12; y++){
-      dat = dat + obj[y].toString();
-      if(y<12){
-        dat = dat + ', ';
-      }
-    };
-    chart.addSeries({
-      name: 'VEND'+data.all_data[i].id,
-      data: JSON.parse('[' + dat + ']')
-    });
-  }
-}
-
-$(document).ready(function() {
-  var cbox = [];
-  $.each($("input[name='cbSucursal']:checked"), function(){
-    cbox.push($(this).val());
-  });
-
-  $.ajax({
-    url: '<?php echo base_url('Charts/GetData'); ?>',
-    data: {action: cbox},
-    type: 'post',
-    success: function(output) {
-      var out=JSON.parse(output);
-      for ( var i = 0; i < out.all_data.length; i++) {
-        var obj = out.all_data[i].data;
-        var dat = '';
-        for(var y =1; y<=12; y++){
-          dat = dat + obj[y].toString();
-          if(y<12){
-            dat = dat + ', ';
-          }
-        };
-      }
-      vendors();
-      setData(out);
-    }
-  });
-
-  $('.form-check-input').click(function(){
-    var cbox = [];
-    $.each($("input[name='cbSucursal']:checked"), function(){
-      cbox.push($(this).val());
-    });
-
-    $.ajax({
-      url: '<?php echo base_url('Charts/GetData'); ?>',
-      data: {action: cbox},
-      type: 'post',
-      success: function(output) {
-        var out=JSON.parse(output);
-        for ( var i = 0; i < out.all_data.length; i++) {
-          var obj = out.all_data[i].data;
-          var dat = '';
-          for(var y =1; y<=12; y++){
-            dat = dat + obj[y].toString();
-            if(y<12){
-              dat = dat + ', ';
-            }
-          };
-        }
-        vendors();
-        setData(out);
-      }
-    });
-  });
-
-
+function sucursales(){
   Highcharts.chart('container3', {
         chart: {
             type: 'column'
@@ -142,22 +69,102 @@ $(document).ready(function() {
                 pointPadding: 0.2,
                 borderWidth: 0
             }
-        },
-        series: [
-          <?php $json=json_decode($sucursales);foreach($json->all_data as $row) { ?>
-          {
-            name: '<?php echo $row->sucursal; ?>',
-            data: [
-              <?php
-              foreach ($row->data as $value) {
-                echo $value.',';
-              }
-               ?>
-            ]
-          },
-          <?php } ?>
-        ]
+        }
     });
+}
+
+function setDataVendors(data){
+  var chart = $('#container2').highcharts();
+  for ( var i = 0; i < data.all_data.length; i++) {
+    var obj = data.all_data[i].data;
+    var dat = '';
+    for(var y =1; y<=12; y++){
+      dat = dat + obj[y].toString();
+      if(y<12){
+        dat = dat + ', ';
+      }
+    };
+    chart.addSeries({
+      name: 'VEND'+data.all_data[i].id,
+      data: JSON.parse('[' + dat + ']')
+    });
+  }
+}
+
+function setDataSucursal(data){
+  var chart = $('#container3').highcharts();
+  for ( var i = 0; i < data.all_data.length; i++) {
+    var obj = data.all_data[i].data;
+    var dat = '';
+    for(var y =1; y<=12; y++){
+      dat = dat + obj[y].toString();
+      if(y<12){
+        dat = dat + ', ';
+      }
+    };
+    chart.addSeries({
+      name: ''+data.all_data[i].sucursal,
+      data: JSON.parse('[' + dat + ']')
+    });
+  }
+}
+
+$(document).ready(function() {
+  var cbox = [];
+  $.each($("input[name='cbSucursal']:checked"), function(){
+    cbox.push($(this).val());
+  });
+
+  $.ajax({
+    url: '<?php echo base_url('Charts/GetData'); ?>',
+    data: {action: cbox},
+    type: 'post',
+    success: function(output) {
+      var out=JSON.parse(output);
+      vendors();
+      setDataVendors(out);
+    }
+  });
+
+  $.ajax({
+    url: '<?php echo base_url('Charts/GetDataS'); ?>',
+    data: {action: cbox},
+    type: 'post',
+    success: function(output) {
+      var out=JSON.parse(output);
+      sucursales();
+      setDataSucursal(out);
+    }
+  });
+
+  $('.form-check-input').click(function(){
+    var cbox = [];
+    $.each($("input[name='cbSucursal']:checked"), function(){
+      cbox.push($(this).val());
+    });
+
+    $.ajax({
+      url: '<?php echo base_url('Charts/GetData'); ?>',
+      data: {action: cbox},
+      type: 'post',
+      success: function(output) {
+        var out=JSON.parse(output);
+        vendors();
+        setDataVendors(out);
+      }
+    });
+
+    $.ajax({
+      url: '<?php echo base_url('Charts/GetDataS'); ?>',
+      data: {action: cbox},
+      type: 'post',
+      success: function(output) {
+        var out=JSON.parse(output);
+        sucursales();
+        setDataSucursal(out);
+      }
+    });
+  });
 
   Highcharts.chart('container4', {
       chart: {

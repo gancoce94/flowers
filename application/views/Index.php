@@ -6,17 +6,17 @@
       <div class="item-slick1 item1-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img1.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -25,17 +25,17 @@
       <div class="item-slick1 item2-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img2.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rollIn">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="lightSpeedIn">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -44,17 +44,17 @@
       <div class="item-slick1 item3-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img3.jpeg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -63,17 +63,17 @@
       <div class="item-slick1 item3-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img4.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -82,17 +82,17 @@
       <div class="item-slick1 item3-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img5.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -101,17 +101,17 @@
       <div class="item-slick1 item3-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img6.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -120,17 +120,17 @@
       <div class="item-slick1 item3-slick1" style="background-image: url(<?php echo base_url(); ?>assets/images/img7.jpg);">
         <div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
           <span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-            Women Collection 2018
+            Productos con hasta el 20% de descuento
           </span>
 
           <h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-            New arrivals
+            Nuevos Productos
           </h2>
 
           <div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
             <!-- Button -->
-            <a href="product.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-              Shop Now
+            <a href="<?php echo base_url('Products'); ?>" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+              Comprar
             </a>
           </div>
         </div>
@@ -152,7 +152,7 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+            <a href="<?php echo base_url('Products/Categorie/'.encryptId(1)); ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
               Preservadas
             </a>
           </div>
@@ -164,7 +164,7 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+            <a href="<?php echo base_url('Products/Categorie/'.encryptId(2)); ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
               Arreglos
             </a>
           </div>
@@ -178,7 +178,7 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+            <a href="<?php echo base_url('Products/Categorie/'.encryptId(3)); ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
               Peluches
             </a>
           </div>
@@ -190,7 +190,7 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+            <a href="<?php echo base_url('Products/Categorie/'.encryptId(5)); ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
               Eventos
             </a>
           </div>
@@ -204,7 +204,7 @@
 
           <div class="block1-wrapbtn w-size2">
             <!-- Button -->
-            <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+            <a href="<?php echo base_url('Products/Categorie/'.encryptId(4)); ?>" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
               Ramos
             </a>
           </div>
@@ -321,7 +321,7 @@
     <div class="block4 wrap-pic-w">
       <img src="<?php echo $item['url']; ?>" alt="IMG-INSTAGRAM">
 
-      <a href="https://www.instagram.com/<?php echo $item['username']; ?>/" target="_blank" class="block4-overlay sizefull ab-t-l trans-0-4">
+      <a href="https://www.instagram.com/p/<?php echo $item['code']; ?>/?taken-by=<?php echo $item['username']; ?>" target="_blank" class="block4-overlay sizefull ab-t-l trans-0-4">
         <span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
           <i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
           <span class="p-t-2"><?php echo $item['likes']; ?></span>

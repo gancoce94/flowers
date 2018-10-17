@@ -21,8 +21,8 @@ class Model_Vendedores extends CI_Model{
     return $query->row();
   }
 
-  function getBySucursal($min, $max){
-    $this->db->where('id_sucursal between '. $min .' and '. $max);
+  function getBySucursal($sql){
+    $this->db->where($sql);
     $this->db->where('estado', true);
     $query = $this->db->get('vendedores');
     return $query->result_array();

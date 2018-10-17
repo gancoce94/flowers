@@ -3,7 +3,7 @@
 	<!-- Title Page -->
 	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(<?php echo base_url(); ?>assets/images/heading-pages-04.jpg);">
 		<h2 class="l-text2 t-center">
-			Contacto
+			Acerca
 		</h2>
 	</section>
 
@@ -13,37 +13,27 @@
 			<div class="row">
 				<div class="col-md-6 p-b-30">
 					<div class="p-r-20 p-r-0-lg">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1oT6Wl6RONoybtuPBEq403CX6JCgujWZU" class="contact-map size21"></iframe>
+            <img src="<?php echo base_url('assets/images/about.jpg') ?>" class="contact-map size21"></iframe>
 					</div>
 				</div>
 
 				<div class="col-md-6 p-b-30">
-					<form class="leave-comment">
 						<h4 class="m-text26 p-b-36 p-t-15">
-							Escríbenos
+							La Empresa
 						</h4>
 
-						<div class="bo4 of-hidden size15 m-b-20">
-							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Nombres y Apellidos">
-						</div>
+						<p>
+							La florería "Ivette Flowers Store" es una microempresa que se dedica a la venta de arreglos florares para todo tipo de evento donde sus clientes pueden comprar por internet o en cada uno de sus locales. La empresa está formada por 3 sucursales ubicadas estratégicamente tanto al norte como al sur de la ciudad y cada sucursal cuenta con 3 vendedores.
+						</p>
+						<br>
+						<br>
+						<p>
+							Sucursales:<br>
+<br>♦ Matriz – Urdesa Central
+<br>♦ Sucursal Norte – Alborada 5ta etapa
+<br>♦ Sucursal Sur – Av. 25 de Julio
 
-						<div class="bo4 of-hidden size15 m-b-20">
-							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="phone-number" placeholder="Telfono">
-						</div>
-
-						<div class="bo4 of-hidden size15 m-b-20">
-							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Dirección Email">
-						</div>
-
-						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="message" placeholder="Mensaje"></textarea>
-
-						<div class="w-size25">
-							<!-- Button -->
-							<button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
-								Enviar
-							</button>
-						</div>
-					</form>
+						</p>
 				</div>
 			</div>
 		</div>

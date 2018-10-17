@@ -7,6 +7,38 @@
           MIS DATOS
         </h4>
       </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-6 p-b-36" style="text-align: center;">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <th scope="row">CI</th>
+              <td><?php echo $this->session->userdata('ci') ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Nombres</th>
+              <td><?php echo $this->session->userdata('nombres') ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Apellidos</th>
+              <td><?php echo $this->session->userdata('apellidos') ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Dirección</th>
+              <td><?php echo $this->session->userdata('direccion') ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Teléfono</th>
+              <td><?php echo $this->session->userdata('telefono') ?></td>
+            </tr>
+            <tr>
+              <th scope="row">Correo</th>
+              <td><?php echo $this->session->userdata('correo') ?></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-3"></div>
       <?php
       if (($this->session->userdata('ci') !== null) && ($this->session->userdata('tipo_usuario') != 'c')) {
         if ($this->session->userdata('tipo_usuario') == 'a') {

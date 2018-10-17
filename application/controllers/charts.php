@@ -14,16 +14,26 @@ class Charts extends CI_Controller {
 	public function GetData(){
 		if(isset($_POST['action']) && !empty($_POST['action'])) {
 			$arr = $_POST['action'];
-			$a=array();
-			$i=0;
+			$str = '';
 			foreach ($arr as $item) {
-				($i==0)?$min=$item:'';
-				array_push($a, array('id'=>$item));
-				$max=$item;
-				$i++;
+				$str = $str . 'id_sucursal = '. $item .' or ';
 			}
-			$vendedores = $this->setArrayVendors($this->model_vendedores->getBySucursal($min, $max));
+			$str = substr($str, 0, -3);
+			$vendedores = $this->setArrayVendors($this->model_vendedores->getBySucursal($str));
 			echo $vendedores;
+		}
+	}
+
+	public function GetDataS(){
+		if(isset($_POST['action']) && !empty($_POST['action'])) {
+			$arr = $_POST['action'];
+			$str = '';
+			foreach ($arr as $item) {
+				$str = $str . 'id = '. $item .' or ';
+			}
+			$str = substr($str, 0, -3);
+			$data = $this->setArraySucursal($this->model_sucursal->getBySucursal($str));
+			echo $data;
 		}
 	}
 
@@ -36,7 +46,6 @@ class Charts extends CI_Controller {
 			$total = $total + $row->total;
 		}
 		$data['sucursales']=$this->setArraySucursal($this->model_sucursal->getAll());
-		$data['vendedores']=$this->setArrayVendors($this->model_vendedores->getAll());
 		$data['products']=$this->model_productos->getTopProducts();
 		$data['categories']=$categories;
 		$data['total']=$total;
@@ -46,7 +55,15 @@ class Charts extends CI_Controller {
 
 	public function Vendor()	{
 		$data['tittle']='Graficos del Vendedor';
-		$data['sucursal']=$this->model_sucursal->getAll();
+		$categories = $this->model_categorias->getSumByCategorie();
+		$total = 0;
+		foreach ($categories as $row) {
+			$total = $total + $row->total;
+		}
+		$data['sucursales']=$this->setArraySucursal($this->model_sucursal->getAll());
+		$data['products']=$this->model_productos->getTopProducts();
+		$data['categories']=$categories;
+		$data['total']=$total;
 		$this->load->view('Charts/Vendor', $data);
 	}
 

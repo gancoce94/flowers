@@ -15,6 +15,12 @@ class Model_Sucursal extends CI_Model{
     return $query->result_array();
   }
 
+  function getBySucursal($sql){
+    $this->db->where($sql);
+    $query = $this->db->get('sucursal');
+    return $query->result_array();
+  }
+
   function getSumBySucursal($id, $month){
     $this->db->select_sum('f.total');
     $this->db->from('facturas f');
