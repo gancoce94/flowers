@@ -5,7 +5,7 @@
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/highcharts/dark-unica.js"></script>
 
 <script type="text/javascript">
-$(function () {
+function vendors() {
   Highcharts.chart('container2', {
     chart: {
         type: 'line'
@@ -32,72 +32,133 @@ $(function () {
             enableMouseTracking: false
         }
     },
-    series: [
-      <?php foreach ($vendedores['all_data'] as $row) { ?>
-      {
-        name: 'VEND<?php echo $row['id']; ?>',
-        data: [
-          <?php
-          foreach ($row['data'] as $value) {
-            echo $value.',';
-          }
-           ?>
-        ]
-      },
-      <?php } ?>
-    ]
+  });
+}
+
+function setData(data){
+  var chart = $('#container2').highcharts();
+  for ( var i = 0; i < data.all_data.length; i++) {
+    var obj = data.all_data[i].data;
+    var dat = '';
+    for(var y =1; y<=12; y++){
+      dat = dat + obj[y].toString();
+      if(y<12){
+        dat = dat + ', ';
+      }
+    };
+    chart.addSeries({
+      name: 'VEND'+data.all_data[i].id,
+      data: JSON.parse('[' + dat + ']')
+    });
+  }
+}
+
+$(document).ready(function() {
+  var cbox = [];
+  $.each($("input[name='cbSucursal']:checked"), function(){
+    cbox.push($(this).val());
   });
 
-  Highcharts.chart('container3', {
-      chart: {
-          type: 'column'
-      },
-      title: {
-          text: 'Ventas Mensuales por Sucursal'
-      },
-      subtitle: {
-          text: 'Source: Propia'
-      },
-      xAxis: {
-        categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-        crosshair: true
-      },
-      yAxis: {
-          min: 0,
-          title: {
-              text: 'Ventas ($)'
+  $.ajax({
+    url: '<?php echo base_url('Charts/GetData'); ?>',
+    data: {action: cbox},
+    type: 'post',
+    success: function(output) {
+      var out=JSON.parse(output);
+      for ( var i = 0; i < out.all_data.length; i++) {
+        var obj = out.all_data[i].data;
+        var dat = '';
+        for(var y =1; y<=12; y++){
+          dat = dat + obj[y].toString();
+          if(y<12){
+            dat = dat + ', ';
           }
-      },
-      tooltip: {
-          headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-          pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-              '<td style="padding:0"><b>${point.y:.1f}</b></td></tr>',
-          footerFormat: '</table>',
-          shared: true,
-          useHTML: true
-      },
-      plotOptions: {
-          column: {
-              pointPadding: 0.2,
-              borderWidth: 0
-          }
-      },
-      series: [
-        <?php foreach ($sucursales['all_data'] as $row) { ?>
-        {
-          name: '<?php echo $row['sucursal']; ?>',
-          data: [
-            <?php
-            foreach ($row['data'] as $value) {
-              echo $value.',';
-            }
-             ?>
-          ]
-        },
-        <?php } ?>
-      ]
+        };
+      }
+      vendors();
+      setData(out);
+    }
   });
-  
+
+  $('.form-check-input').click(function(){
+    var cbox = [];
+    $.each($("input[name='cbSucursal']:checked"), function(){
+      cbox.push($(this).val());
+    });
+
+    $.ajax({
+      url: '<?php echo base_url('Charts/GetData'); ?>',
+      data: {action: cbox},
+      type: 'post',
+      success: function(output) {
+        var out=JSON.parse(output);
+        for ( var i = 0; i < out.all_data.length; i++) {
+          var obj = out.all_data[i].data;
+          var dat = '';
+          for(var y =1; y<=12; y++){
+            dat = dat + obj[y].toString();
+            if(y<12){
+              dat = dat + ', ';
+            }
+          };
+        }
+        vendors();
+        setData(out);
+      }
+    });
+  });
+
+
+  Highcharts.chart('container3', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Ventas Mensuales por Sucursal'
+        },
+        subtitle: {
+            text: 'Source: Propia'
+        },
+        xAxis: {
+          categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+          crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Ventas ($)'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>${point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [
+          <?php $json=json_decode($sucursales);foreach($json->all_data as $row) { ?>
+          {
+            name: '<?php echo $row->sucursal; ?>',
+            data: [
+              <?php
+              foreach ($row->data as $value) {
+                echo $value.',';
+              }
+               ?>
+            ]
+          },
+          <?php } ?>
+        ]
+    });
+
   Highcharts.chart('container4', {
       chart: {
           type: 'bar'
@@ -269,11 +330,11 @@ $(function () {
       <h4 class="m-text26 p-b-36" style="text-align: center;">
         Sucursales a mostrar
       </h4>
-      <?php foreach($sucursales['all_data'] as $row){ ?>
+      <?php $json=json_decode($sucursales);foreach($json->all_data as $row){ ?>
         <div class="form-check" style="margin-left: 30px">
-          <input class="form-check-input" checked type="checkbox" name="cbSucursal" id="<?php echo $row['id']; ?>" value="<?php echo $row['id']; ?>">
-          <label class="form-check-label" for="<?php echo $row['id']; ?>">
-            <?php echo $row['sucursal']; ?>
+          <input class="form-check-input" checked type="checkbox" name="cbSucursal" id="<?php echo $row->id; ?>" value="<?php echo $row->id; ?>">
+          <label class="form-check-label" for="<?php echo $row->id; ?>">
+            <?php echo $row->sucursal; ?>
           </label>
         </div>
       <?php } ?>

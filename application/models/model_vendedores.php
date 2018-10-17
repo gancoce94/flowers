@@ -21,16 +21,16 @@ class Model_Vendedores extends CI_Model{
     return $query->row();
   }
 
-  function getBySucursal($sucursal){
-    $this->db->where('id_sucursal', $sucursal);
+  function getBySucursal($min, $max){
+    $this->db->where('id_sucursal between '. $min .' and '. $max);
     $this->db->where('estado', true);
     $query = $this->db->get('vendedores');
-    return $query->result();
+    return $query->result_array();
   }
 
   function getAll(){
     $query = $this->db->get("vendedores");
-    return $query->result();
+    return $query->result_array();
   }
 
   function getSumByVendor($id, $month){
@@ -38,10 +38,10 @@ class Model_Vendedores extends CI_Model{
     $this->db->from('facturas f');
     $this->db->join('vendedores v', 'f.id_vendedor = v.id_usuario');
     $this->db->join('sucursal s', 's.id = v.id_sucursal');
-    $this->db->where('f.id', $id);
-    $this->db->where('extract(moth from f.fecha) =', $month);
+    $this->db->where('v.id_usuario', $id);
+    $this->db->where('extract(month from f.fecha) =', $month);
     $query = $this->db->get();
-    return $query->result();
+    return $query->row();
   }
 
 }

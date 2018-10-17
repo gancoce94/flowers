@@ -11,6 +11,22 @@ class Charts extends CI_Controller {
 		$this->load->model('model_productos');
 	}
 
+	public function GetData(){
+		if(isset($_POST['action']) && !empty($_POST['action'])) {
+			$arr = $_POST['action'];
+			$a=array();
+			$i=0;
+			foreach ($arr as $item) {
+				($i==0)?$min=$item:'';
+				array_push($a, array('id'=>$item));
+				$max=$item;
+				$i++;
+			}
+			$vendedores = $this->setArrayVendors($this->model_vendedores->getBySucursal($min, $max));
+			echo $vendedores;
+		}
+	}
+
 	public function Admin()	{
 		$data['tittle']='Graficos del Administrador';
 
@@ -20,7 +36,7 @@ class Charts extends CI_Controller {
 			$total = $total + $row->total;
 		}
 		$data['sucursales']=$this->setArraySucursal($this->model_sucursal->getAll());
-		$data['vendedores']=$this->setArraySucursal($this->model_vendedores->getAll());
+		$data['vendedores']=$this->setArrayVendors($this->model_vendedores->getAll());
 		$data['products']=$this->model_productos->getTopProducts();
 		$data['categories']=$categories;
 		$data['total']=$total;
@@ -38,24 +54,25 @@ class Charts extends CI_Controller {
 		$aux_2 = array('id'=>'', 'sucursal' => '', 'data' => array());
 		$complete = array('all_data' => array());
 		foreach ($result as $item) {
-			$id = $item->id;
+			$id = $item['id'];
 			for ($i=1; $i <= 12; $i++) {
 				$row = $this->model_sucursal->getSumBySucursal($id, $i);
 				$aux[$i] = (isset($row->total))?$row->total:0;
 			}
 			$aux_2['id'] = $id;
-			$aux_2['sucursal'] = (isset($item->nombre))?$item->nombre:'';
+			$aux_2['sucursal'] = (isset($item['nombre']))?$item['nombre']:'';
 			$aux_2['data'] = $aux;
 			array_push($complete['all_data'], $aux_2);
 		}
-		return $complete;
+		$json = json_encode($complete);
+		return $json;
 	}
 
 	public function setArrayVendors($result){
 		$aux_2 = array('id'=>'', 'data' => array());
 		$complete = array('all_data' => array());
 		foreach ($result as $item) {
-			$id = $item->id;
+			$id = $item['id_usuario'];
 			for ($i=1; $i <= 12; $i++) {
 				$row = $this->model_vendedores->getSumByVendor($id, $i);
 				$aux[$i] = (isset($row->total))?$row->total:0;
@@ -64,6 +81,7 @@ class Charts extends CI_Controller {
 			$aux_2['data'] = $aux;
 			array_push($complete['all_data'], $aux_2);
 		}
-		return $complete;
+		$json = json_encode($complete);
+		return $json;
 	}
 }

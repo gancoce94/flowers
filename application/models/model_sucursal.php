@@ -12,7 +12,7 @@ class Model_Sucursal extends CI_Model{
 
   function getAll(){
     $query = $this->db->get("sucursal");
-    return $query->result();
+    return $query->result_array();
   }
 
   function getSumBySucursal($id, $month){
