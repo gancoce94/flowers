@@ -4,12 +4,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	function __construct(){
     parent::__construct();
-    $this->load->model('model_productos');
+		$this->load->model('model_productos');
+    $this->load->model('model_categorias');
   }
 
 	public function index()
 	{
-		$tag = 'flowers';
+		$tag = 'ifs_ec';
 		$url = 'https://www.instagram.com/explore/tags/'.$tag.'/?__a=1';
 
 		$all_result = $this->processURL($url);
@@ -25,16 +26,17 @@ class Welcome extends CI_Controller {
 					$aux = json_decode($aux);
 					$name = $aux->user->username;
 					$arr[$i] = array('url' => $edges->node->display_url,
-												'desc' => $tex->node->text,
-												'likes' => $edges->node->edge_liked_by->count,
-												'username' => $name);
+														'desc' => $tex->node->text,
+														'code' => $edges->node->shortcode,
+														'likes' => $edges->node->edge_liked_by->count,
+														'username' => $name);
 		    }
 		    $i++;
 		  }
 		}
 
 		$r_products = $this->model_productos->getRandom();
-
+		$this->session->set_userdata('categories', $this->model_categorias->getAll());
 		$data['posts'] = $arr;
 		$data["rproducts"] = $r_products;
 		$this->load->view('Index', $data);

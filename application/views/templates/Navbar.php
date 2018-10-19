@@ -30,7 +30,7 @@
 
     <div class="wrap_header">
       <!-- Logo -->
-      <a href="index.html" class="logo">
+      <a href="<?php echo base_url(); ?>" class="logo">
         <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
       </a>
 
@@ -43,21 +43,25 @@
             </li>
 
             <li>
-              <a href="#">Categorías</a>
+              <a href="<?php echo base_url('Products/Index') ?>">Categorías</a>
               <ul class="sub_menu">
-                <li><a href="#">Flores Preservadas</a></li>
-                <li><a href="#">Arreglos</a></li>
-                <li><a href="#">Peluches y Obsequios</a></li>
-                <li><a href="#">Ramos</a></li>
-                <li><a href="#">Eventos</a></li>
+                <?php foreach ($this->session->categories as $cat) { ?>
+                  <li>
+                    <a href="<?php echo base_url('Products/Categorie/'.encryptId($cat->id)); ?>">
+                      <?php echo $cat->categoria; ?>
+                    </a>
+                  </li>
+                <?php } ?>
               </ul>
             </li>
 
             <li>
               <a href="<?php echo base_url(); ?>Products">Productos</a>
+              <?php if (($this->session->userdata('ci')!==null) && ($this->session->userdata('tipo_usuario') !== 'c')) { ?>
               <ul class="sub_menu">
                 <li><a href="<?php echo base_url(); ?>Products/Product">Agregar Productos</a></li>
               </ul>
+              <?php } ?>
             </li>
 
             <li>
@@ -173,7 +177,7 @@
   <!-- Header Mobile -->
   <div class="wrap_header_mobile">
     <!-- Logo moblie -->
-    <a href="index.html" class="logo-mobile">
+    <a href="<?php echo base_url(); ?>" class="logo-mobile">
       <img src="<?php echo base_url(); ?>/assets/images/icons/logo.png" alt="IMG-LOGO">
     </a>
 
@@ -314,23 +318,27 @@
         </li>
 
         <li class="item-menu-mobile">
-          <a href="#">Categorías</a>
+          <a href="<?php echo base_url('Products/Index') ?>">Categorías</a>
           <ul class="sub-menu">
-            <li><a href="#">Flores Preservadas</a></li>
-            <li><a href="#">Arreglos</a></li>
-            <li><a href="#">Peluches y Obsequios</a></li>
-            <li><a href="#">Ramos</a></li>
-            <li><a href="#">Eventos</a></li>
+            <?php foreach ($categorias as $cat) { ?>
+              <li>
+                <a href="<?php echo base_url('Products/Categorie/'.encryptId($cat->id)); ?>">
+                  <?php echo $cat->categoria; ?>
+                </a>
+              </li>
+            <?php } ?>
           </ul>
           <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
         </li>
 
         <li class="item-menu-mobile">
           <a href="<?php echo base_url(); ?>Products">Productos</a>
-          <ul class="sub-menu">
+          <?php if (($this->session->userdata('ci')!==null) && ($this->session->userdata('tipo_usuario') !== 'c')) { ?>
+          <ul class="sub_menu">
             <li><a href="<?php echo base_url(); ?>Products/Product">Agregar Productos</a></li>
           </ul>
           <i class="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
+          <?php } ?>
         </li>
 
         <li class="item-menu-mobile">

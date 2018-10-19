@@ -23,45 +23,22 @@
 
           <ul class="p-b-54">
             <li class="p-t-4">
-              <a href="#" class="s-text13 active1">
+              <a href="<?php echo base_url('Products/Index') ?>" class="s-text13 active1">
                 Todas
               </a>
             </li>
-
-            <li class="p-t-4">
-              <a href="#" class="s-text13">
-                Flores Preservadas
-              </a>
-            </li>
-
-            <li class="p-t-4">
-              <a href="#" class="s-text13">
-                Arreglos
-              </a>
-            </li>
-
-            <li class="p-t-4">
-              <a href="#" class="s-text13">
-                Peluches y Obsequios
-              </a>
-            </li>
-
-            <li class="p-t-4">
-              <a href="#" class="s-text13">
-                Ramos
-              </a>
-            </li>
-
-            <li class="p-t-4">
-              <a href="#" class="s-text13">
-                Eventos
-              </a>
-            </li>
+            <?php foreach ($categorias as $cat) { ?>
+              <li class="p-t-4">
+                <a href="<?php echo base_url('Products/Categorie/'.encryptId($cat->id)); ?>" class="s-text13">
+                  <?php echo $cat->categoria; ?>
+                </a>
+              </li>
+            <?php } ?>
           </ul>
 
           <!--  -->
           <h4 class="m-text14 p-b-32">
-            Filters
+            Filtros
           </h4>
 
           <div class="filter-price p-t-22 p-b-50 bo3">
