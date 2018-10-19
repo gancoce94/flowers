@@ -48,15 +48,8 @@
             <a class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" href="<?php echo base_url() ?>Charts/Admin">Ver Reportes</a>
           </div>
         </div>
-      <?php } else { ?>
-        <div class="col-md-12" style="text-align: center;">
-          <div class="block2-btn-addcart w-size1 trans-0-4 p-b-20">
-            <a class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" href="<?php echo base_url() ?>Charts/Vendor">Ver Reportes</a>
-          </div>
-        </div>
-      <?php }
-        }
-      ?>
+      <?php } ?>
+      <?php } ?>
     </div>
   </div>
 </section>

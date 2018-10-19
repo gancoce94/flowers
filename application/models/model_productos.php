@@ -34,10 +34,13 @@ class Model_Productos extends CI_Model{
     return $query->result();
   }
 
-  function getTopProducts(){
+  function getTopProducts($year, $sql){
     $this->db->select('p.producto, SUM(d.total) as total');
     $this->db->from('detalles d');
     $this->db->join('productos p', 'd.id_producto = p.id');
+    $this->db->join('facturas f', 'd.id_factura = f.id');
+    $this->db->where('EXTRACT(year from f.fecha) =', $year);
+    $this->db->where('('.$sql.')');
     $this->db->group_by('p.producto');
     $this->db->order_by("total", "desc");
     $this->db->limit(10);
