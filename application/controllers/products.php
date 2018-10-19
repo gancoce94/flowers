@@ -14,6 +14,8 @@ class Products extends CI_Controller{
   }
 
   public function Index(){
+    $id = decryptId($this->uri->segment(3));
+
     $data['tittle']='Catálogo de Productos';
 
     $url = 'Products/Index';
@@ -24,21 +26,56 @@ class Products extends CI_Controller{
     $data["query"] = $this->model_productos->fetch_products($config["per_page"], $page);
     $data["links"] = $this->pagination->create_links();
     $data["rows"] = $rows;
+    $data['categorias']=$this->model_categorias->getAll();
+    $data['id_cat']=$id;
+    $this->load->view("Products/Index", $data);
+  }
 
+  public function Categorie(){
+    $id = decryptId($this->uri->segment(3));
+
+    $data['tittle']='Catálogo de Productos';
+
+    $url = 'Products/Categorie/'.encryptId($id).'/';
+    $rows=$this->model_productos->record_count_by_cat($id);
+    $config=getConfig($url, $rows);
+    $this->pagination->initialize($config);
+    $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+    $data["query"] = $this->model_productos->fetch_products_by_cat($config["per_page"], $page, $id);
+    $data["links"] = $this->pagination->create_links();
+    $data["rows"] = $rows;
+    $data['categorias']=$this->model_categorias->getAll();
     $this->load->view("Products/Index", $data);
   }
 
   public function Detail(){
-    $data['tittle']='Detalles del Producto';
     $id = decryptId($this->uri->segment(3));
-    $row = $this->model_productos->getById($id);
-    $images = $this->model_images->getById($id);
-    $data['producto'] = $row;
-    $data['images'] = $images;
-    $r_products = $this->model_productos->getRandom();
-    $data["rproducts"] = $r_products;
+    if ($id ==''){
+      $data['tittle']='Catálogo de Productos';
 
-    $this->load->view("Products/Detail", $data);
+      $url = 'Products/Index';
+      $rows=$this->model_productos->record_count();
+      $config=getConfig($url, $rows);
+      $this->pagination->initialize($config);
+      $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+      $data["query"] = $this->model_productos->fetch_products($config["per_page"], $page);
+      $data["links"] = $this->pagination->create_links();
+      $data["rows"] = $rows;
+      $data['categorias']=$this->model_categorias->getAll();
+
+      $this->load->view("Products/Index", $data);
+    }else {
+      $data['tittle']='Detalles del Producto';
+
+      $row = $this->model_productos->getById($id);
+      $images = $this->model_images->getById($id);
+      $data['producto'] = $row;
+      $data['images'] = $images;
+      $r_products = $this->model_productos->getRandom();
+      $data["rproducts"] = $r_products;
+
+      $this->load->view("Products/Detail", $data);
+    }
   }
 
   public function Product(){
