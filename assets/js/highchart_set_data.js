@@ -157,11 +157,14 @@ function setDataCategories(data){
 
 function setDataProducts(data) {
   var n_data =data.all_data[0];
-  var cats=new Array(), dats = new Array();
+  var cats=new Array(), str = '';
   for ( var i = 0; i < n_data.length; i++) {
-    cats[i] = n_data[i].producto;
-    dats[i] = parseFloat(n_data[i].total);
+    cats[i] = n_data[i].name;
+    str = str +'{"y":'+ n_data[i].y+',"name":'+n_data[i].x+'},';
   }
+  str = str.slice(0, -1);
+  str = '['+str+']';
+  var dats = JSON.parse(str);
   Highcharts.chart('container4', {
     chart: {
       type: 'bar'
@@ -189,7 +192,8 @@ function setDataProducts(data) {
       }
     },
     tooltip: {
-      valueSuffix: ' dólares'
+      headerFormat: '',
+      pointFormat: '<br><b>${point.y:.1f}</b><br><b>{point.name:.1f} UND</b>'
     },
     plotOptions: {
       bar: {
