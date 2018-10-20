@@ -23,10 +23,3 @@ Instalación
 Crea una bdd con nombre flowers, en el servidor de bdd y luego importa la bdd
 que se encuentra en la carpeta db.
 Copiar el directorio del proyecto en la carpeta del servidor.
-
-*********
-Enlaces externos
-*********
-
-Puede encontrar un Demo del proyecto en el siguiente link:
-https://flowers-msig.herokuapp.com/
